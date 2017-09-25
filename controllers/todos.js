@@ -8,7 +8,7 @@ const router = new Router({prefix: '/todos'});
 const Todo = AV.Object.extend('Todo');
 
 // 查询 Todo 列表
-router.get('/', async function(ctx) {
+router.get('/', async (ctx) => {
   ctx.state.title = 'TODO 列表';
   const query = new AV.Query(Todo);
   query.descending('createdAt');
@@ -27,7 +27,7 @@ router.get('/', async function(ctx) {
 });
 
 // 新增 Todo 项目
-router.post('/', async function(ctx) {
+router.post('/', async (ctx) => {
   const content = ctx.request.body.content;
   console.log(content);
   ctx.body = content;

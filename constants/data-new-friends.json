@@ -1,0 +1,38 @@
+[
+  {
+    "wxid": "wangyu22202",
+    "headerUrl": "http://owgszbgsl.bkt.clouddn.com/avatar-mw.jpeg",
+    "nickname": "王宇",
+    "remark": "merlin.wang",
+    "time": 1505790655602,
+    "messages": ["我是Merlin"],
+    "status": 1
+  },
+  {
+    "wxid": "MrCJ365",
+    "headerUrl": "http://owgszbgsl.bkt.clouddn.com/avatar-cw.jpeg",
+    "nickname": "成江",
+    "remark": "",
+    "time": 1505470665990,
+    "messages": ["您好", "好久不见"],
+    "status": 2
+  },
+  {
+    "wxid": "summer_coder",
+    "headerUrl": "http://owgszbgsl.bkt.clouddn.com/avatar-gj.jpeg",
+    "nickname": "summer7",
+    "remark": "",
+    "time": 1505618057844,
+    "messages": ["请求添加你为朋友"],
+    "status": 3
+  },
+  {
+    "wxid": "shine77-",
+    "headerUrl": "http://owgszbgsl.bkt.clouddn.com/avatar-cr.jpeg",
+    "nickname": "放了那只猫",
+    "remark": "",
+    "time": 1505704426448,
+    "messages": ["我是38班XXX"],
+    "status": 0
+  }
+]

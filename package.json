@@ -5,18 +5,37 @@
   "description": "A sample Node.js app using Koa",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js -- "
+    "start": "node server/server.js",
+    "dev": "better-npm-run dev"
+  },
+  "betterScripts": {
+    "dev": {
+      "command": "nodemon server/server.js -- ",
+      "env": {
+        "PORT": 3002,
+        "NODE_ENV": "development",
+        "LEANCLOUD_APP_ID": "23ySUWuiznNn0F6jjvJBUPU9-gzGzoHsz",
+        "LEANCLOUD_APP_KEY": "rPfsOMMkILsdokehkoVlUqky",
+        "LEANCLOUD_APP_MASTER_KEY": "5GKkNJPu0erdMRikgkdS4J6U"
+      }
+    }
   },
   "dependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "better-npm-run": "^0.1.0",
     "ejs": "^2.5.6",
+    "jsonp-body": "^1.0.0",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.2.1",
     "koa-static": "^4.0.1",
     "koa-views": "^6.0.2",
+    "koa2-cors": "^2.0.3",
     "leancloud-storage": "^3.0.2",
-    "leanengine": "^3.0.0"
+    "leanengine": "^3.0.0",
+    "pinyin": "^2.8.3",
+    "request": "^2.82.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

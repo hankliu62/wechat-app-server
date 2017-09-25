@@ -1,0 +1,213 @@
+[
+  {
+    "mid": "59bf53e976233dc4c4a5ed98",
+    "base": {
+      "wxid": "wxid_baiqian",
+      "type": "friends"
+    },
+    "chatBaseModel": {
+      "newsUnreadCount": 1,
+      "endTimeStr": 1505710210291,
+      "endChatAuth": "白浅",
+      "endChatTxt": "你说什么，我刚才在遛迷谷，没看到。"
+    },
+    "chatDialogueBarModel": {
+      "menu": []
+    },
+    "chatDialogueModel": [],
+    "chatMemberModel": [
+      "wxid_baiqian"
+    ],
+    "chatConfigModel": {
+      "isStick": false,
+      "newsMute": false,
+      "starFriends": false,
+      "lookMePhotos": true,
+      "lookHisPhotos": true,
+      "blacklist": false
+    }
+  },
+  {
+    "mid": "59bf53e976233dc4c4a5ed99",
+    "base": {
+      "wxid": "wxid_taobaoshougou",
+      "type": "group"
+    },
+    "chatBaseModel": {
+      "newsUnreadCount": 1,
+      "endTimeStr": 1505470665990,
+      "endChatAuth": "夜华",
+      "endChatTxt": "大家下班的时候记得锁好门"
+    },
+    "chatDialogueBarModel": {
+      "menu": []
+    },
+    "chatDialogueModel": [],
+    "chatMemberModel": [
+      "wxid_hankliu",
+      "wxid_baiqian",
+      "wxid_yehua",
+      "wxid_liubei",
+      "wxid_guangyu",
+      "wxid_zhugeliang",
+      "wxid_sunshangxiang",
+      "wxid_sunquan",
+      "wxid_huangyueying",
+      "wxid_zhenji"
+    ],
+    "chatConfigModel": {
+      "chatBackground": null,
+      "groupNotice": "",
+      "isStick": false,
+      "newsMute": true,
+      "contactsSave": false,
+      "showGroupNickname": true
+    }
+  },
+  {
+    "mid": "59bf53e976233dc4c4a5ed9a",
+    "base": {
+      "wxid": "wxid_xituquan",
+      "type": "service"
+    },
+    "chatBaseModel": {
+      "newsUnreadCount": 11,
+      "endTimeStr": 1504168586443,
+      "endChatAuth": "",
+      "endChatTxt": "挖掘最优质的互联网技术"
+    },
+    "chatDialogueBarModel": {
+      "menu": [
+        {
+          "title": "翻译计划",
+          "url": "http://p.memoe.cn/",
+          "subMenu": []
+        },
+        {
+          "title": "绝密试卷",
+          "url": "http://p.memoe.cn/",
+          "subMenu": []
+        },
+        {
+          "title": "稀土掘金",
+          "url": "http://gold.xitu.io",
+          "subMenu": []
+        }
+      ]
+    },
+    "chatDialogueModel": [
+      "wxid_xituquan"
+    ],
+    "chatMemberModel": [],
+    "chatConfigModel": {
+      "isStick": false,
+      "newsMute": false,
+      "starFriends": false,
+      "lookMePhotos": true,
+      "lookHisPhotos": true,
+      "blacklist": false
+    }
+  },
+  {
+    "mid": "59bf53e976233dc4c4a5ed9b",
+    "base": {
+      "wxid": "iloveleme",
+      "type": "service"
+    },
+    "chatBaseModel": {
+      "newsUnreadCount": 0,
+      "endTimeStr": 1503236586443,
+      "endChatAuth": "",
+      "endChatTxt": "饿了么网上订餐平台"
+    },
+    "chatDialogueBarModel": {
+      "menu": [
+        {
+          "title": "我要订餐",
+          "url": "http://m.ele.me/",
+          "subMenu": []
+        },
+        {
+          "title": "关注必读",
+          "url": "",
+          "subMenu": []
+        },
+        {
+          "title": "联系我们",
+          "url": "http://m.ele.me/",
+          "subMenu": []
+        }
+      ]
+    },
+    "chatDialogueModel": [
+      "iloveleme"
+    ],
+    "chatMemberModel": [],
+    "chatConfigModel": {
+      "isStick": false,
+      "newsMute": false,
+      "starFriends": false,
+      "lookMePhotos": true,
+      "lookHisPhotos": true,
+      "blacklist": false
+    }
+  },
+  {
+    "mid": "59bf53e976233dc4c4a5ed9f",
+    "base": {
+      "wxid": "wxid_bagua",
+      "type": "group"
+    },
+    "chatBaseModel": {
+      "newsUnreadCount": 1,
+      "endTimeStr": 1503706586443,
+      "endChatAuth": "佩佩",
+      "endChatTxt": "2018杨幂、范冰冰、赵丽颖要大混战了, 明年新剧上映你支持谁?"
+    },
+    "chatDialogueBarModel": {
+      "menu": []
+    },
+    "chatDialogueModel": [],
+    "chatMemberModel": [
+      "miss_cc220",
+      "wxid_baiqian",
+      "wxid_yehua"
+    ],
+    "chatConfigModel": {
+      "chatBackground": null,
+      "groupNotice": "",
+      "isStick": false,
+      "newsMute": true,
+      "contactsSave": false,
+      "showGroupNickname": true
+    }
+  },
+  {
+    "mid": "59bf53e976233dc4c4a5ed0d",
+    "base": {
+      "wxid": "miss_cc220",
+      "type": "friends"
+    },
+    "chatBaseModel": {
+      "newsUnreadCount": 0,
+      "endTimeStr": 1400710210291,
+      "endChatAuth": "佩佩",
+      "endChatTxt": "Facebook将修改React、Jest、Flow 与 Immutable.js授权许可。"
+    },
+    "chatDialogueBarModel": {
+      "menu": []
+    },
+    "chatDialogueModel": [],
+    "chatMemberModel": [
+      "miss_cc220"
+    ],
+    "chatConfigModel": {
+      "isStick": false,
+      "newsMute": false,
+      "starFriends": false,
+      "lookMePhotos": true,
+      "lookHisPhotos": true,
+      "blacklist": false
+    }
+  }
+]

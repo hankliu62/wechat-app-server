@@ -1,0 +1,22 @@
+[
+  {
+    "wxid": "wxid_taobaoshougou",
+    "name": "收购淘宝讨论群",
+    "nickname": "收购淘宝讨论群",
+    "remark": "收购淘宝讨论群",
+    "qq": "00002",
+    "email": null,
+    "qrCode": "",
+    "signature": "个性签名"
+  },
+  {
+    "wxid": "wxid_bagua",
+    "name": "八卦讨论群",
+    "nickname": "八卦讨论群",
+    "remark": "八卦讨论群",
+    "qq": "00003",
+    "email": null,
+    "qrCode": "",
+    "signature": "个性签名"
+  }
+]
