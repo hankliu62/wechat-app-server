@@ -185,7 +185,7 @@ const getNewFriends = () => {
 }
 
 router.get('/new-friends', (ctx) => {
-  const newFriends = getNewFriends();
+  const newFriends =  getNewFriends();
   ctx.body = {
     status: 200,
     data: {
