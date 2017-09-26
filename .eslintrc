@@ -1,0 +1,63 @@
+{
+  "extends": "standard",
+  "parser": "babel-eslint",
+  "rules": {
+    "valid-jsdoc": "off", // valid document it
+    "default-case": "off",
+    "no-fallthrough": "off",
+    "no-return-assign": "off",
+    "consistent-return": "off",
+    "no-restricted-syntax": ["off", "iterators/generators"],
+    "class-methods-use-this": "off",
+    // Disable comma-dangle unless need to support it
+    "comma-dangle": "off",
+    "func-names": "off",
+    "id-length": "off",
+    "no-param-reassign": "off",
+    "arrow-body-style": "off",
+    "no-loop-func": "off",
+    "global-require": "off",
+    "no-self-compare": "off",
+    "guard-for-in": "warn",
+
+    // error rules
+    "linebreak-style": ["error", "unix"],
+    "semi": ["error", "always"],
+    "max-len": ["error", 250, 2],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-mixed-operators": ["error", {
+      "groups": [
+        ["+", "-", "*", "/", "%", "**"],
+        ["&", "|", "^", "~", "<<", ">>", ">>>"],
+        ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+        ["&&", "||"],
+        ["in", "instanceof"]
+      ],
+      "allowSamePrecedence": true
+      }],
+
+    // https://github.com/benmosher/eslint-plugin-import: import rules
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": ["error", { "commonjs": false, "ignore": ["systemConfig"] }],
+    "import/no-dynamic-require": "off",
+    "import/extensions": "warn"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "experimentalObjectRestSpread": true
+  },
+  "plugins": [
+    "import",
+    "node",
+    "promise",
+    "standard"
+  ],
+  "globals": {}
+}

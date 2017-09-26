@@ -1,22 +1,21 @@
 const Router = require('koa-router');
-const request = require('request');
 const pinyin = require('pinyin');
 const sortBy = require('lodash/sortBy');
 const cloneDeep = require('lodash/cloneDeep');
 
 const Constant = require('../constants/wechat');
 
-const router = new Router({prefix: '/v1/api/wechat'});
+const router = new Router({ prefix: '/v1/api/wechat' });
 
 const getItemValue = (item, keys) => {
-  for(const key of keys) {
+  for (const key of keys) {
     if (item[key]) {
       return item[key];
     }
   }
 
   return '';
-}
+};
 
 const generatePinyinInitial = (items, keys, supplement) => {
   const pinyinOptions = {
@@ -35,21 +34,38 @@ const generatePinyinInitial = (items, keys, supplement) => {
           item.initial = '#';
         }
       }
-      item.pinyin = ([]).concat.call([], ...pinyins).join('');
+      item.pinyin = ([]).concat(pinyins).join('');
     }
 
-    if (supplement && typeof(supplement) === 'function') {
-      supplement(item)
+    if (supplement && typeof (supplement) === 'function') {
+      supplement(item);
     }
   }
 
   return items;
-}
+};
 
 const getChats = () => {
   const chats = cloneDeep(require('../data/data-chats.json') || []);
   return chats;
-}
+};
+
+const getContacts = () => {
+  const contacts = cloneDeep(require('../data/data-contacts.json') || []);
+  return generatePinyinInitial(contacts, ['remark', 'nickname'], (item) => {
+    item.gender = item.sex === 1 ? Constant.MALE : Constant.FEMALE;
+  });
+};
+
+const getGroups = () => {
+  const groups = cloneDeep(require('../data/data-groups.json') || []);
+  return groups;
+};
+
+const getOfficialAccounts = () => {
+  const officialAccounts = cloneDeep(require('../data/data-official-accounts.json') || []);
+  return generatePinyinInitial(officialAccounts, ['name']);
+};
 
 router.get('/chats', (ctx) => {
   const chats = getChats();
@@ -98,10 +114,9 @@ router.get('/chats', (ctx) => {
       });
       chat.chatMemberModel = chatMembers;
     }
-
   }
 
-  const sortedChats = sortBy(chats, (item) => -item.chatBaseModel.endTimeStr);
+  const sortedChats = sortBy(chats, item => -item.chatBaseModel.endTimeStr);
 
   ctx.body = {
     status: 200,
@@ -110,13 +125,6 @@ router.get('/chats', (ctx) => {
     }
   };
 });
-
-const getContacts = () => {
-  const contacts = cloneDeep(require('../data/data-contacts.json') || []);
-  return generatePinyinInitial(contacts, ['remark', 'nickname'], (item) => {
-    item.gender = item.sex === 1 ? Constant.MALE : Constant.FEMALE;
-  });
-}
 
 router.get('/contacts', (ctx) => {
   const contacts = getContacts();
@@ -138,11 +146,6 @@ router.get('/contacts/:wxid', (ctx) => {
   };
 });
 
-const getGroups = () => {
-  const groups = cloneDeep(require('../data/data-groups.json')|| []);
-  return groups;
-}
-
 router.get('/groups', (ctx) => {
   const groups = getGroups();
   ctx.body = {
@@ -156,7 +159,7 @@ router.get('/groups', (ctx) => {
 const getMoments = () => {
   const moments = cloneDeep(require('../data/data-moments.json') || []);
   return moments;
-}
+};
 
 router.get('/moments', (ctx) => {
   const moments = getMoments();
@@ -182,10 +185,10 @@ router.get('/moments/:wxid', (ctx) => {
 const getNewFriends = () => {
   const newFriends = cloneDeep(require('../data/data-new-friends.json') || []);
   return newFriends;
-}
+};
 
 router.get('/new-friends', (ctx) => {
-  const newFriends =  getNewFriends();
+  const newFriends = getNewFriends();
   ctx.body = {
     status: 200,
     data: {
@@ -193,11 +196,6 @@ router.get('/new-friends', (ctx) => {
     }
   };
 });
-
-const getOfficialAccounts = () => {
-  const officialAccounts = cloneDeep(require('../data/data-official-accounts.json') || []);
-  return generatePinyinInitial(officialAccounts, ['name']);
-}
 
 router.get('/official-accounts', (ctx) => {
   const officialAccounts = getOfficialAccounts();
@@ -213,7 +211,7 @@ const getSelf = () => {
   const personal = cloneDeep(require('../data/data-self.json'));
   personal.gender = personal.sex === 1 ? Constant.MALE : Constant.FEMALE;
   return personal;
-}
+};
 
 router.get('/self', (ctx) => {
   const personal = getSelf();
