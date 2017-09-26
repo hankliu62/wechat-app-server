@@ -47,7 +47,7 @@ const generatePinyinInitial = (items, keys, supplement) => {
 }
 
 const getChats = () => {
-  const chats = require('../data/data-chats.json') || [];
+  const chats = cloneDeep(require('../data/data-chats.json') || []);
   return chats;
 }
 
@@ -88,13 +88,13 @@ router.get('/chats', (ctx) => {
     if (chat.base.type === Constant.CHAT_ROOM_TYPE_SERVICE) {
       const chatDialogues = (chat.chatDialogueModel || []).map((wxid) => {
         const officialAccount = chatMemberResources.find(item => item.wxid === wxid) || {};
-        return Object.assign({ wxid }, cloneDeep(officialAccount));
+        return Object.assign({}, { wxid }, cloneDeep(officialAccount));
       });
       chat.chatDialogueModel = chatDialogues;
     } else {
       const chatMembers = (chat.chatMemberModel || []).map((wxid) => {
         const member = chatMemberResources.find(item => item.wxid === wxid) || {};
-        return Object.assign({ wxid }, cloneDeep(member));
+        return Object.assign({}, { wxid }, cloneDeep(member));
       });
       chat.chatMemberModel = chatMembers;
     }
@@ -112,7 +112,7 @@ router.get('/chats', (ctx) => {
 });
 
 const getContacts = () => {
-  const contacts = require('../data/data-contacts.json');
+  const contacts = cloneDeep(require('../data/data-contacts.json') || []);
   return generatePinyinInitial(contacts, ['remark', 'nickname'], (item) => {
     item.gender = item.sex === 1 ? Constant.MALE : Constant.FEMALE;
   });
@@ -139,7 +139,7 @@ router.get('/contacts/:wxid', (ctx) => {
 });
 
 const getGroups = () => {
-  const groups = require('../data/data-groups.json');
+  const groups = cloneDeep(require('../data/data-groups.json')|| []);
   return groups;
 }
 
@@ -154,7 +154,7 @@ router.get('/groups', (ctx) => {
 });
 
 const getMoments = () => {
-  const moments = require('../data/data-moments.json');
+  const moments = cloneDeep(require('../data/data-moments.json') || []);
   return moments;
 }
 
@@ -180,7 +180,7 @@ router.get('/moments/:wxid', (ctx) => {
 });
 
 const getNewFriends = () => {
-  const newFriends = require('../data/data-new-friends.json');
+  const newFriends = cloneDeep(require('../data/data-new-friends.json') || []);
   return newFriends;
 }
 
@@ -195,7 +195,7 @@ router.get('/new-friends', (ctx) => {
 });
 
 const getOfficialAccounts = () => {
-  const officialAccounts = require('../data/data-official-accounts.json');
+  const officialAccounts = cloneDeep(require('../data/data-official-accounts.json') || []);
   return generatePinyinInitial(officialAccounts, ['name']);
 }
 
@@ -210,7 +210,7 @@ router.get('/official-accounts', (ctx) => {
 });
 
 const getSelf = () => {
-  const personal = require('../data/data-self.json');
+  const personal = cloneDeep(require('../data/data-self.json'));
   personal.gender = personal.sex === 1 ? Constant.MALE : Constant.FEMALE;
   return personal;
 }
