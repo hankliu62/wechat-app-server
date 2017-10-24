@@ -223,4 +223,32 @@ router.get('/self', (ctx) => {
   };
 });
 
+const getAllMessages = () => {
+  const messages = cloneDeep(require('../data/data-messages.json'));
+  return messages;
+};
+
+router.get('/messages/:mid', (ctx) => {
+  const allMessages = getAllMessages() || [];
+  const currrentMessages = allMessages.filter(item => item.mid === ctx.params.mid);
+  const sortedMessages = sortBy(currrentMessages, item => -item.date);
+  const contacts = getContacts() || [];
+  const personal = getSelf();
+
+  const messages = sortedMessages.map(item => {
+    const contact = personal.wxid === item.wxid ? cloneDeep(personal) : contacts.find(cItem => cItem.wxid === item.wxid);
+    const newMessage = cloneDeep(item);
+    if (contact) {
+      newMessage.concat = contact;
+    }
+    return newMessage;
+  });
+  ctx.body = {
+    status: 200,
+    data: {
+      messages
+    }
+  };
+});
+
 module.exports = router;
